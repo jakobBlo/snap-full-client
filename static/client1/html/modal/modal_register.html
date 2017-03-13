@@ -1,0 +1,41 @@
+<!-- Author: Jan Dieckhoff, Date: 08.12.2016-->
+<!-- Modal -->
+<div class="modal" id="register" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 300px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="closeRegister()">&times;</button>
+                <h4 class="modal-title">Registration</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Firstname</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Firstname" ng-model="register.firstName">
+                    </div>
+                    <div class="form-group">
+                        <label>Lastname</label>
+                        <input type="text" class="form-control" placeholder="Enter Lastname" ng-model="register.lastName">
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" ng-model="register.userName">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" ng-model="register.password">
+                    </div>
+                    <div class="form-group">
+                        <label>Password Confirmation</label>
+                        <input type="password" class="form-control" placeholder="Enter Password Confirmation" ng-model="register.passwordConf">
+                        <div ng-show="!passwordsEqual()"><span class="text text-danger"><small>Passwords are not equal</small></span></div>
+                    </div>
+                    <button class="btn btn-success btn-block" ng-click="submitRegistrationData()" ng-disabled="inputMissing()" data-dismiss="modal">Register</button>
+                    <div ng-show="isError()"><span class="text text-danger"><small>{{showError()}}</small></span></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

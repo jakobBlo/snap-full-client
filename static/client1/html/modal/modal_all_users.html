@@ -1,0 +1,36 @@
+<div class="modal" id="modalAllUsers" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 35%">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="closeAllUsers()">&times;</button>
+                <h4 class="modal-title">All Users</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-borderless">
+                    <tbody style="border: none">
+                    <tr ng-repeat="un in getAllUsers() track by $index">
+                        <td>
+                            <span class="glyphicon glyphicon-stop" ng-style="un.online && {'color': 'greenyellow'} || {'color': 'red'}" ></span>
+                        </td>
+                        <td style="width: 5%">
+                            <span class="text">{{un.userName}}</span>
+                        </td>
+                        <td style="width: 5%">
+                            <button class="btn btn-default btn-xs pull-left" ng-click="message(un)"><span class="glyphicon glyphicon glyphicon-envelope"></span></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-default btn-xs pull-left" ng-click="follow($index, getAllUsers())"><span class="glyphicon glyphicon-eye-open"></span></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-block" ng-click="closeAllUsers()">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

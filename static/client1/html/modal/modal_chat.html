@@ -1,0 +1,40 @@
+<div class="modal" id="modalChat" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="width: 320px">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="closeChat()">&times;</button>
+                <h4 class="modal-title">Chat</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12" ng-show="videoChatRunning()">
+                    <video autoplay style="width: 260px; height: 200px" ng-src="{{getRemoteStream()}}">
+
+                    </video>
+                </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-default" style="height: 150px; width: 260px; overflow-y: auto" scroll-glue>
+                        <div class="panel-body">
+                            <div ng-repeat="msgData in getMessages() track by $index">
+                                <div><span class="text"><small>{{msgData.userName}}: {{msgData.msg}}</small></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form style="width: 250px">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="message" >
+                                <span class="input-group-btn"><button class="btn btn-default" ng-click="sendMessage(message); message = ''">Send</button></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12">
+                    <button ng-show="!videoChatRunning()" class="btn btn-success btn-block" ng-click="initVideoChat()" ng-disabled="!getPartnerUserObj().online">Video Call</button>
+                    <button ng-show="videoChatRunning()" class="btn btn-danger btn-block" ng-click="stopVideoChat()">Stop Video Call</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

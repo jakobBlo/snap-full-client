@@ -1,0 +1,29 @@
+{
+  "name": "snap",
+  "version": "0.0.1",
+  "description": "Snap - social network API project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client\"",
+    "server-dev": "node index",
+    "client": " node client1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/JakobB/snap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/JakobB/snap#readme",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "express": "^4.0.0",
+    "peer": "0.2.8",
+    "socket.io": "1.7.3",
+    "requirejs": "2.3.3",
+    "oh.snap": "0.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.3.0"
+  }
+}

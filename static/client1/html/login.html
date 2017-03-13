@@ -1,0 +1,33 @@
+<!-- Author: Jan Dieckhoff, Date: 08.12.2016-->
+<div class="container">
+    <header><h1>Login</h1></header>
+    <div ng-controller="LoginController">
+        <div class="row">
+            <div class="col-sm-4" style="margin-top: 15px">
+                <form ng-submit="submitLoginData()">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"
+                               ng-model="login.userName">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password" ng-model="login.password">
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit" ng-disabled="inputMissing()">Login</button>
+                    <div ng-show="isError()"><span class="text text-danger"><small>{{showError()}}</small></span></div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <br/>
+            <br/>
+            <div class="col-sm-4">
+                <button class="btn btn-default btn-block" ng-click="openRegister()">Register</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>
+
+

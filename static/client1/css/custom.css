@@ -1,0 +1,23 @@
+.table-borderless td,
+.table-borderless th,
+.table-borderless tr{
+    border: none !important;
+}
+
+.modal {
+    display: block;
+}
+
+.modal-body {
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 20px 0;
+}
