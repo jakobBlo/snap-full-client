@@ -4,9 +4,8 @@
   "description": "Snap - social network API project",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client\"",
-    "server-dev": "node index",
-    "client": " node client1"
+    "dev": "concurrently --kill-others \"npm run server-dev\"",
+    "server-dev": "node index"
   },
   "repository": {
     "type": "git",
